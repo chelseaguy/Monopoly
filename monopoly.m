@@ -39,7 +39,6 @@ for (i=2:12);
     end        
 end
 ProbSite(13:23,41)=outofjailroll(2:12,1);
-answer=[answer,ProbSite(:,qcol)];
 % Adjust probabilities for landing on Community Chest (site=3,18 and 34)
 % note 16 CC, of which 3 lead to movement to another Site
 Chest(1)=3;
@@ -88,7 +87,6 @@ for (j=1:3);
         end
     end
 end
-answer=[answer,ProbSite(:,qcol)];
 % Solve for Eigenvalues, need to normalised Eigenvalues to sum to 1
 [V,D]=eig(ProbSite);
 Probs=real(V(:,1)/sum(V(:,1)));
